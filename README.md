@@ -8,7 +8,7 @@
 ## Modification
 - We only modified the file "model_network.py";
 - We replace the LSTM module with the self-attention module;
-- Instead of directly feeding the vector [temporal-embedding+spatial embedding] into the LSTM, we adopt a self-attention module for temporal and spatial embeddings, respectively. Then, we add "LayerNorm" layer for nomarlizing the vector [temporal-embedding+spatial embedding].
+- Instead of directly feeding the vector [temporal-embedding + spatial-embedding] into the LSTM, we adopt a self-attention module for temporal and spatial embeddings, respectively. Then, we add "LayerNorm" layer for nomarlizing the vector [temporal-embedding + spatial-embedding].
 
 
 ## Experiments (2022-11-07)
