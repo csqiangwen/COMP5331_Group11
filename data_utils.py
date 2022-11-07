@@ -226,7 +226,7 @@ def triplet_groud_truth():
         elif str(config["distance_type"]) == "DITA": coe = 32
         elif str(config["distance_type"]) == "LCRS": coe = 4
         elif str(config["distance_type"]) == "NetERP": coe = 8
-    if str(config["dataset"]) == "rome":
+    if str(config["dataset"]) == "roma":
         if str(config["distance_type"]) == "TP": coe = 8
         elif str(config["distance_type"]) == "DITA": coe = 16
         elif str(config["distance_type"]) == "LCRS": coe = 2
@@ -319,9 +319,9 @@ class batch_list():
         return a_node_batch, a_time_batch, p_node_batch, p_time_batch, n_node_batch, n_time_batch, batch_index
 
 if __name__ == "__main__":
-    # data = DataLoader()
-    # data.get_triplets()
-    # triplet_groud_truth()
+    data = DataLoader()
+    data.get_triplets()
+    triplet_groud_truth()
     test_merge_st_dis(valiortest='vali')
     test_merge_st_dis(valiortest='test')
 
