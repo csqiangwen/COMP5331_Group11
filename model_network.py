@@ -193,6 +193,8 @@ class ST_LSTM(nn.Module):
         att_s = self.layer_norm_s(att_s)
         att_t = self.layer_norm_t(att_t)
         
+        ###############################  TFMM  ###########################################
+        # Self-attention mechanism on location embedding
         s_q = self.Ws_q(att_s)
         s_k = self.Ws_k(att_s)
         s_v = self.Ws_v(att_s)
@@ -200,15 +202,21 @@ class ST_LSTM(nn.Module):
         attn = F.softmax(attn, dim=-1)
         output_s = att_s + torch.matmul(attn, s_v)
 
+        # Self-attention mechanism on temporal embedding
         t_q = self.Wt_q(att_t)
         t_k = self.Wt_k(att_t)
         t_v = self.Wt_v(att_t)
         attn = torch.matmul(t_q / self.temperature, t_k.transpose(1, 2))
         attn = F.softmax(attn, dim=-1)
         output_t = att_t + torch.matmul(attn, t_v)
+        ###############################  TFMM  ###########################################
 
+        ###############################  IFM  ###########################################
+        # LayerNorm adaptation
         output = self.layer_norm(torch.cat([output_s, output_t], dim=2))
+        # Linear layer for fusion
         output = self.FFN(output) + output
+        ###############################  IFM  ###########################################
 
         paded_output = pad_sequence(output, batch_first=True)
 
