@@ -19,26 +19,26 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
 1. Data preprocessing (Time embedding and node embedding)
 
    ```shell
-   python preprocess.py
+   python3 preprocess.py
    ```
 
 2. Ground truth generating (It will take a while...)
 
    ```shell
-   python spatial_similarity.py
-   python temporal_similarity.py
+   python3 spatial_similarity.py
+   python3 temporal_similarity.py
    ```
 
 3. Triplets generating
 
    ```shell
-   python data_utils.py
+   python3 data_utils.py
    ```
 
 4. Training
 
    ```shell
-   python main.py
+   python3 main.py
    ```
 
 ## Experiments
