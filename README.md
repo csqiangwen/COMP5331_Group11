@@ -14,6 +14,33 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
 - PyTorch 1.4+
 - A Nvidia GPU with cuda 10.2+
 
+## Reproducibility & Training
+
+1. Data preprocessing (Time embedding and node embedding)
+
+   ```shell
+   python preprocess.py
+   ```
+
+2. Ground truth generating (It will take a while...)
+
+   ```shell
+   python spatial_similarity.py
+   python temporal_similarity.py
+   ```
+
+3. Triplets generating
+
+   ```shell
+   python data_utils.py
+   ```
+
+4. Training
+
+   ```shell
+   python main.py
+   ```
+
 ## Experiments
 <div align=center>
 <img src=./figs/tdrive.pic.jpg width="80%" ></img>
