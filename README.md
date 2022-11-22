@@ -14,7 +14,7 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
 - PyTorch 1.4+
 - A Nvidia GPU with cuda 10.2+
 
-## Reproducibility & Training
+## Training
 
 1. Data preprocessing (Time embedding and node embedding)
 
@@ -36,6 +36,16 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
    ```
 
 4. Training
+
+   ```shell
+   python3 main.py
+   ```
+   
+## Testing
+
+1. We share the models pretrained on T-Drive dataset in the directory './model/'
+
+2. Change 'load_model_name' and turn 'STsim.ST_eval()' on in the file 'main.py'
 
    ```shell
    python3 main.py
