@@ -4,14 +4,17 @@
 <img src=./figs/framework.jpg width="100%" ></img>
 </div>
 
+## Introduction
+This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
 
-## Modification
-- We only modified the file "model_network.py";
-- We replace the LSTM module with the self-attention module;
-- Instead of directly feeding the vector [temporal-embedding + spatial-embedding] into the LSTM, we adopt a self-attention module for temporal and spatial embeddings, respectively. Then, we add "LayerNorm" layer for nomarlizing the vector [temporal-embedding + spatial-embedding].
+## Requirements
 
+- Ubuntu OS
+- Python >= 3.5 (Anaconda3 is recommended)
+- PyTorch 1.4+
+- A Nvidia GPU with cuda 10.2+
 
-## Experiments (2022-11-22)
+## Experiments
 <div align=center>
 <img src=./figs/tdrive.pic.jpg width="80%" ></img>
 </div>
