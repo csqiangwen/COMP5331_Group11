@@ -1,7 +1,7 @@
 # ST2Vec_new
 
 <div align=center>
-<img src=./fig/framework.jpg width="80%" ></img>
+<img src=./figs/framework.jpg width="80%" ></img>
 </div>
 
 
