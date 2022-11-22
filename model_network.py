@@ -137,13 +137,8 @@ class ST_LSTM(nn.Module):
     def __init__(self, embedding_size, hidden_size, num_layers, dropout_rate, device):
         super(ST_LSTM, self).__init__()
         self.device = device
-        # self.bi_lstm = nn.LSTM(input_size=embedding_size,
-        #                        hidden_size=hidden_size,
-        #                        num_layers=num_layers,
-        #                        batch_first=True,
-        #                        dropout=dropout_rate,
-        #                        bidirectional=True)
 
+        ###############################  TFMM  ###########################################
         self.Ws_q = nn.Linear(embedding_size//2, embedding_size//2, bias=True)
         self.Ws_k = nn.Linear(embedding_size//2, embedding_size//2, bias=True)
         self.Ws_v = nn.Linear(embedding_size//2, embedding_size//2, bias=True)
@@ -152,7 +147,9 @@ class ST_LSTM(nn.Module):
         self.Wt_k = nn.Linear(embedding_size//2, embedding_size//2, bias=True)
         self.Wt_v = nn.Linear(embedding_size//2, embedding_size//2, bias=True)
         self.temperature = (embedding_size//2) ** 0.5
+        ###############################  TFMM  ###########################################
 
+        ###############################  IFM  ###########################################
         self.FFN = nn.Sequential(
             nn.Linear(embedding_size, embedding_size),
             nn.ReLU(),
@@ -163,17 +160,11 @@ class ST_LSTM(nn.Module):
         self.layer_norm_t = nn.LayerNorm(embedding_size // 2, eps=1e-6)
 
         self.layer_norm = nn.LayerNorm(embedding_size, eps=1e-6)
+        ###############################  IFM  ###########################################
 
         # self-attention weights
         self.w_omega = nn.Parameter(torch.Tensor(hidden_size, hidden_size))
         self.u_omega = nn.Parameter(torch.Tensor(hidden_size, 1))
-
-        # self.compress = nn.Sequential(
-        #     nn.Linear(embedding_size, embedding_size // 2),
-        #     nn.ReLU(),
-        #     nn.Linear(embedding_size // 2, 1),
-        #     nn.Sigmoid(),
-        # )
 
         nn.init.uniform_(self.w_omega, -0.1, 0.1)
         nn.init.uniform_(self.u_omega, -0.1, 0.1)
