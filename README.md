@@ -14,7 +14,7 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
 - PyTorch 1.4+
 - A Nvidia GPU with cuda 10.2+
 
-## Training
+## Data Preparation
 
 1. Data preprocessing (Time embedding and node embedding)
 
@@ -34,8 +34,9 @@ This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
    ```shell
    python3 data_utils.py
    ```
+## Training
 
-4. Training
+1. Training
 
    ```shell
    python3 main.py
