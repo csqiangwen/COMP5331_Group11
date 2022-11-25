@@ -5,7 +5,7 @@
 </div>
 
 ## Introduction
-This is a COMP5311 project by WEN Qiang, XU Shuanjie, ZHU Jiapeng.
+This is a COMP5311 project by WEN Qiang, XU Shuangjie, ZHU Jiapeng.
 
 ## Requirements
 
